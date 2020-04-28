@@ -1,0 +1,5 @@
+<div class="ui three stackable cards">
+  <div *ngFor="let menu of menus$ | async">
+    <app-menu [menu]="menu"></app-menu>
+  </div>
+</div>
