@@ -1,0 +1,18 @@
+<div class="ui secondary  menu">
+    <div class="header item">
+        Beire Cool
+      </div>
+  <a class="item" [routerLink]="['menu/list']" [routerLink]="['days']">
+    Dagen
+  </a>
+  <a class="item" [routerLinkActive]="['active']" [routerLink]="['menu/list']">
+    Menu's
+  </a>
+
+  <div class="right menu">
+    <a class="ui item">
+      Logout
+    </a>
+  </div>
+</div>
+<ng-content></ng-content>

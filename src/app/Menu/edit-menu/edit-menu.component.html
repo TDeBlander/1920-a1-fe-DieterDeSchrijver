@@ -1,0 +1,29 @@
+<div class="ui container">
+    <h2 class="ui center aligned icon header">
+        <i class="plus circle icon green"></i>
+        {{menu.title}}
+      </h2>
+  <form [formGroup]="menuForm" (ngSubmit)='onSubmit()' class="ui form">
+    <div class="field">
+      <label>Title</label>
+      <input name="title" placeholder="Title" type="text" formControlName="title" />
+    </div>
+
+    <div class="field">
+      <label>Description</label>
+      <textarea style="margin-top: 0px; margin-bottom: 0px; height: 154px;" formControlName="description"></textarea>
+    </div>
+
+
+    <div class="field">
+      <label>Allergies</label>
+      <select formControlName="allergies" multiple="" class="ui fluid dropdown">
+          <option *ngFor="let allergy of allergies" [value]="allergy">
+              {{allergy.name}}
+          </option>
+      </select>
+    </div>
+
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+</div>

@@ -1,6 +1,6 @@
 
 
-  <div class="menuCard ui card">
+
     <div class="image">
       <img src="https://material.angular.io/assets/img/examples/shiba2.jpg">
     </div>
@@ -14,9 +14,8 @@
       </div>
     </div>
     <div class="extra content">
-        <button class="positive ui button">Edit</button>
+        <button class="positive ui button" [routerLink]="['/menu/edit', menu.id]">Edit</button>
         <button class="negative ui button"(click)="deleteMenu()">
             Delete
           </button>
     </div>
-  </div>

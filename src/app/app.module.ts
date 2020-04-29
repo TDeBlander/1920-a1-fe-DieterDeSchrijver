@@ -5,18 +5,38 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './Menu/menu/menu.component';
 import { MenuListComponent } from './Menu/menu-list/menu-list.component';
+import { AddMenuComponent } from './Menu/add-menu/add-menu.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { EditMenuComponent } from './Menu/edit-menu/edit-menu.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { MenuResolver } from './Menu/MenuResolver';
+
+const appRoutes: Routes = [
+  {path: 'menu/list', component: MenuListComponent},
+  {path: 'menu/edit', component: EditMenuComponent},
+  { path: 'menu/edit/:id', component: EditMenuComponent,
+    resolve: { menu: MenuResolver}},
+  { path: '**', component: PageNotFoundComponent}
+];
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    MenuListComponent
+    MenuListComponent,
+    AddMenuComponent,
+    EditMenuComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

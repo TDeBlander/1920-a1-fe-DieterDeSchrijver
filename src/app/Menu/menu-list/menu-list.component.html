@@ -1,5 +1,9 @@
-<div class="ui three stackable cards">
-  <div *ngFor="let menu of menus$ | async">
-    <app-menu [menu]="menu"></app-menu>
+<div class="ui container">
+  <h1 class="ui header center aligned">Available menu's</h1>
+  <div class="ui three stackable cards">
+    <app-menu *ngFor="let menu of menus$ | async" class="ui card" [menu]="menu"></app-menu>
   </div>
 </div>
+<div class="ui divider"></div>
+<app-add-menu></app-add-menu>
+  
