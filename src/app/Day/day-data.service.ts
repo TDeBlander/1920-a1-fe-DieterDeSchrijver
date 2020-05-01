@@ -51,6 +51,13 @@ export class DayDataService {
       );
   }
 
+  deleteDay(day: Day) {
+    this.http.delete(`${environment.apiUrl}/Day/${day.id}`).subscribe(() => {
+      this._days = this._days.filter((d) => d.id != day.id);
+      this._days$.next(this._days);
+    })
+  }
+
   handleError(err: any): Observable < never > {
     let errorMessage: string;
     if (err.error instanceof ErrorEvent) {
