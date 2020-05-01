@@ -1,5 +1,11 @@
 <div class="ui container">
-  <h1 class="ui header center aligned">Available days</h1>
+
+
+  <h1 class="ui header center aligned">Available days <br> <button [routerLink]="['/day/add']" class="ui button blue" >
+    <i class="plus white custom icon center aligned"></i>
+  </button></h1>
+
+
   <div class="ui three column stackable equal height grid">
 
     <app-day class="column" *ngFor="let day of days$ | async" [day]="day"></app-day>

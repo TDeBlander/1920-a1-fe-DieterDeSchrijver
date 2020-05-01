@@ -2,7 +2,8 @@
   <img src="https://material.angular.io/assets/img/examples/shiba2.jpg">
 </div>
 <div class="content">
-  <a class="header">{{menu.title}}</a>
+  <a *ngIf="inDay" class="header" [routerLink]="['/day/detail', day.id]">{{menu.title}}</a>
+  <p *ngIf="!inDay" class="header">{{menu.title}}</p>
   <div class="meta">
     <img *ngFor="let allergy of allergies" src="../../../assets/img/allergyIcons/{{allergy.iconName}}.png" alt=""
       style="height: 40px;">
@@ -16,8 +17,8 @@
   <button *ngIf="!inDay" class="grey ui button" (click)="deleteMenu()">Delete</button>
   <div *ngIf="inDay">
     <h1 class="ui header center aligned">
-      {{date | date : 'dd' }}
-      <div class="sub header">{{date | date : 'MMMM' }} {{date | date : 'y' }}</div>
+      {{day.date | date : 'dd' }}
+      <div class="sub header">{{day.date | date : 'MMMM' }} {{day.date | date : 'y' }}</div>
     </h1>
   </div>
 </div>

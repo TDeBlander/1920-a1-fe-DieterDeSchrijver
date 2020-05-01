@@ -1,0 +1,39 @@
+<div class="ui container">
+    <div class="ui card fluid">
+        <div class="content">
+          <div class="header">{{day.date | date: 'longDate'}}</div>
+          <div class="meta">{{day.menu.title}}</div>
+          <div class="description">
+            <p>{{day.menu.description}}</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="ui header">
+        <i class="user icon"></i>
+        <div class="content">
+          Registered Users - {{day.registeredUsers.length}}
+        </div>
+      </h2>
+
+  <div class="ui styled fluid accordion">
+    <div *ngFor="let user of registeredUsers">
+      <div class="title">
+        <i class="dropdown icon"></i>
+        {{user.firstName}} {{user.lastName}}
+      </div>
+      <div class="content">
+        <div class="ui bulleted list">
+          <div class="item">{{user.firstName}} {{user.lastName}}</div>
+          <div class="item">{{user.email}}</div>
+          <div class="item">
+            <div><b>Registered days</b></div>
+            <div class="list">
+              <div class="item" *ngFor="let day of user.registeredDays">{{day}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

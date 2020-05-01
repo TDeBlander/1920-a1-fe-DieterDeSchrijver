@@ -1,0 +1,29 @@
+<div class="ui container">
+    <h2 class="ui center aligned icon header">
+        <i class="plus circle icon green"></i>
+        Add a new day
+      </h2>
+  <form [formGroup]="dayForm" (ngSubmit)='onSubmit()' class="ui form">
+    <div class="field">
+      <label>Date</label>
+      <input name="date" placeholder="Date" type="date" formControlName="date" />
+    </div>
+
+    <div class="field">
+      <label>Capacity</label>
+      <input type="number" formControlName="capacity"input/>
+    </div>
+
+
+    <div class="field">
+      <label>Menu</label>
+      <select formControlName="menu" class="ui fluid dropdown">
+          <option *ngFor="let menu of menus" [value]="menu.id">
+              {{menu.title}}
+          </option>
+      </select>
+    </div>
+
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+</div>
