@@ -12,10 +12,13 @@ import { EditMenuComponent } from './Menu/edit-menu/edit-menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { MenuResolver } from './Menu/MenuResolver';
+import { DayListComponent } from './Day/day-list/day-list.component';
+import { DayComponent } from './Day/day/day.component';
 
 const appRoutes: Routes = [
   {path: 'menu/list', component: MenuListComponent},
   {path: 'menu/edit', component: EditMenuComponent},
+  {path: 'day/list', component: DayListComponent},
   { path: 'menu/edit/:id', component: EditMenuComponent,
     resolve: { menu: MenuResolver}},
   { path: '**', component: PageNotFoundComponent}
@@ -29,7 +32,9 @@ const appRoutes: Routes = [
     MenuListComponent,
     AddMenuComponent,
     EditMenuComponent,
-    MainNavComponent
+    MainNavComponent,
+    DayListComponent,
+    DayComponent
   ],
   imports: [
     BrowserModule,

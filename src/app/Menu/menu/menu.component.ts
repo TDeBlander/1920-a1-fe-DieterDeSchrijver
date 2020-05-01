@@ -9,10 +9,18 @@ import { MenuDataService } from '../menu-data.service';
 })
 export class MenuComponent implements OnInit {
   @Input() public menu: Menu;
+  @Input() public inDay: boolean;
+  @Input() public date: Date;
 
   constructor(private menuDataService: MenuDataService) { }
 
   ngOnInit(): void {
+    console.log(this.inDay)
+    console.log(this.date)
+  }
+
+  get allergies(){
+    return this.menu.allergies
   }
 
   deleteMenu(){

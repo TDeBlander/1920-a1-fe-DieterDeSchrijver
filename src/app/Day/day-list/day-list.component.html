@@ -1,0 +1,9 @@
+<div class="ui container">
+  <h1 class="ui header center aligned">Available days</h1>
+  <div class="ui three column stackable equal height grid">
+
+    <app-day class="column" *ngFor="let day of days$ | async" [day]="day"></app-day>
+
+  </div>
+</div>
+<div class="ui divider"></div>
