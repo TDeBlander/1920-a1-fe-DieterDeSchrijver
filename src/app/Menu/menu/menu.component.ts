@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Menu } from '../menu-model';
 import { MenuDataService } from '../menu-data.service';
 import { Day } from 'src/app/Day/day-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -13,14 +14,18 @@ export class MenuComponent implements OnInit {
   @Input() public inDay: boolean;
   @Input() public day: Day;
 
-  constructor(private menuDataService: MenuDataService) { }
+  constructor(private menuDataService: MenuDataService, private _router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.day)
+
   }
 
   get allergies(){
     return this.menu.allergies
+  }
+
+  get url(){
+    return this._router.url;
   }
 
   deleteMenu(){

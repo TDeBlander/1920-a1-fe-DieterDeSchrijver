@@ -1,8 +1,8 @@
-<div class="ui container">
+<div class="ui container " >
 
 
 
-<app-menu class="ui card centered" [menu]="menu" [inDay]="true" [day]=day></app-menu>
+<app-menu class="ui card centered clickable" id="{{day.id}}"[menu]="menu" [inDay]="true" [day]=day (click)="clickDay()"></app-menu>
 </div>
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DayDataService } from '../day-data.service';
 import { Day } from '../day-model';
 import { Observable, EMPTY } from 'rxjs';
@@ -12,6 +12,7 @@ import { catchError } from 'rxjs/operators';
 export class DayListComponent implements OnInit {
   private _fetchDays$: Observable<Day[]>;
   errorMessage: any;
+  @Input() public onHome: boolean;
 
   constructor(private dayDataService: DayDataService) { }
 
@@ -23,7 +24,7 @@ export class DayListComponent implements OnInit {
       })
     );
 
-    console.log(this._fetchDays$)
+    console.log(this.onHome)
   }
 
   get days$(){

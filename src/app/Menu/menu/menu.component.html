@@ -2,8 +2,7 @@
   <img src="../../../assets/img/empty-plate.jpg">
 </div>
 <div class="content">
-  <a *ngIf="inDay" class="header" [routerLink]="['/day/detail', day.id]">{{menu.title}}</a>
-  <p *ngIf="!inDay" class="header">{{menu.title}}</p>
+  <p class="header">{{menu.title}}</p>
   <div class="meta">
     <img *ngFor="let allergy of allergies" src="../../../assets/img/allergyIcons/{{allergy.iconName}}.png" alt=""
       style="height: 40px;">

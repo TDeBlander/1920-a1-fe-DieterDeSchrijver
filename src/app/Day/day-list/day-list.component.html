@@ -1,11 +1,15 @@
 <div class="ui container">
 
-  <h1 class="ui header center aligned">Available days <br>
+  <h1 *ngIf="!onHome" class="ui header center aligned">Available days <br>
     <button [routerLink]="['/day/add']" class="ui button blue">
       <i class="plus white custom icon center aligned"></i>
     </button>
   </h1>
 
+  <h2 class="ui header center aligned" *ngIf="onHome" >
+    Maak een keuze uit de volgende data
+    <div class="sub header">klik de dagen aan en vul het formulier in voor je in te schrijven.</div>
+  </h2>
 
   <div class="ui three column stackable equal height grid">
 

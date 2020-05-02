@@ -17,9 +17,10 @@ import { DayComponent } from './Day/day/day.component';
 import { DayDetailComponent } from './Day/day-detail/day-detail.component';
 import { DayResolver } from './Day/DayResolver';
 import { AddDayComponent } from './Day/add-day/add-day.component';
+import { HomeComponent } from './Home/home/home.component';
 
 const appRoutes: Routes = [
-  {path: 'menu/list', component: MenuListComponent},
+  {path: 'menu/list', component: MenuListComponent, },
   {path: 'day/add', component: AddDayComponent},
   {path: 'menu/edit', component: EditMenuComponent},
   {path: 'day/list', component: DayListComponent},
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
     resolve: {day: DayResolver}},
   { path: 'menu/edit/:id', component: EditMenuComponent,
     resolve: { menu: MenuResolver}},
+    {path: '', component: HomeComponent},
   { path: '**', component: PageNotFoundComponent}
 ];
 
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     DayListComponent,
     DayComponent,
     DayDetailComponent,
-    AddDayComponent
+    AddDayComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
