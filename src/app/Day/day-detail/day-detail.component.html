@@ -25,13 +25,7 @@
       <div class="content">
         <div class="ui bulleted list">
           <div class="item">{{user.firstName}} {{user.lastName}}</div>
-          <div class="item">{{user.email}}</div>
-          <div class="item">
-            <div><b>Registered days</b></div>
-            <div class="list">
-              <div class="item" *ngFor="let day of user.registeredDays">{{day}}</div>
-            </div>
-          </div>
+          <div class="item">{{user.id}}</div>
         </div>
       </div>
     </div>

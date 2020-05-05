@@ -18,6 +18,14 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+
+
+
+    var els = document.querySelectorAll('.image1');
+    for (var i=0; i < els.length; i++) {
+        els[i].setAttribute("src", `../../../assets/img/${this.menu.imageSrc}.jpg`);
+    }
   }
 
   get allergies(){

@@ -7,6 +7,7 @@ interface MenuJson {
   id: string;
   description: string;
   allergies: Allergy[];
+  imageSrc: string;
 }
 
 interface MenuJsonForBackend {
@@ -14,10 +15,12 @@ interface MenuJsonForBackend {
   id: string;
   description: string;
   allergies: string[];
+  imageSrc: string;
 }
 
 export class Menu {
   private _id: string;
+  private _imageSrc: string;
 
   constructor(
     private _title: string,
@@ -32,6 +35,7 @@ export class Menu {
       json.allergies
     );
 
+    menu.imageSrc = json.imageSrc;
     menu.id = json.id;
     return menu
   }
@@ -68,6 +72,10 @@ export class Menu {
     return this._allergies;
   }
 
+  public get imageSrc(): string {
+    return this._imageSrc
+  }
+
   public get id(): string {
     return this._id;
   }
@@ -75,6 +83,10 @@ export class Menu {
 
   public set id(v: string) {
     this._id = v;
+  }
+
+  public set imageSrc(v: string) {
+    this._imageSrc = v;
   }
 
 

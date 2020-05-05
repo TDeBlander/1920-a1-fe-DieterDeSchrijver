@@ -4,6 +4,7 @@ import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Day } from './day-model';
 import { tap, map, catchError } from 'rxjs/operators';
+import { Register } from './register-model';
 
 @Injectable({
   providedIn: 'root'
@@ -67,7 +68,12 @@ export class DayDataService {
       this._selectedDays = this._selectedDays.filter((d) => d != id);
     }
 
-    console.log(this._selectedDays)
+    
+  }
+
+  registerDay(r: Register): Observable<any>{
+    r.dayIds = this._selectedDays;
+    return this.http.post(`${environment.apiUrl}/register`, r.toJSON())
   }
 
   handleError(err: any): Observable < never > {
@@ -83,3 +89,4 @@ export class DayDataService {
     return throwError(errorMessage);
   }
 }
+

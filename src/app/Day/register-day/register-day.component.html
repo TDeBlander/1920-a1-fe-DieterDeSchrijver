@@ -1,0 +1,26 @@
+<div class="ui container">
+    <h2 class="ui center aligned icon header">
+        <i class="plus circle icon green"></i>
+        Register
+      </h2>
+  <form [formGroup]="registerForm" (ngSubmit)='onSubmit()' class="ui form">
+    <div class="field">
+      <label>FirstName</label>
+      <input name="firstName" placeholder="First Name" type="text" formControlName="firstName" />
+    </div>
+
+    <div class="field">
+      <label>Last Name</label>
+      <input type="text" placeholder="Last Name" formControlName="lastName"input/>
+    </div>
+
+
+    <div class="field">
+        <label>Email</label>
+        <input type="email" placeholder="email" formControlName="email"input/>
+      </div>
+
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+</div>
+

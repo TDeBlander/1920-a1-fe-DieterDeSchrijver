@@ -18,6 +18,7 @@ import { DayDetailComponent } from './Day/day-detail/day-detail.component';
 import { DayResolver } from './Day/DayResolver';
 import { AddDayComponent } from './Day/add-day/add-day.component';
 import { HomeComponent } from './Home/home/home.component';
+import { RegisterDayComponent } from './Day/register-day/register-day.component';
 
 const appRoutes: Routes = [
   {path: 'menu/list', component: MenuListComponent, },
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     DayComponent,
     DayDetailComponent,
     AddDayComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterDayComponent
   ],
   imports: [
     BrowserModule,

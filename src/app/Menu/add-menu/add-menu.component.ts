@@ -35,6 +35,7 @@ export class AddMenuComponent implements OnInit {
   @Output() public newMenu = new EventEmitter < Menu > ();
   private _allergies: Allergy[];
   private _allergiesToAdd: Allergy[];
+  private url: any;
 
 
   public menuForm: FormGroup;
@@ -83,5 +84,19 @@ export class AddMenuComponent implements OnInit {
 
       this.menuForm.reset();
   }
+
+  onSelectFile(event) { // called each time file input changes
+    if (event.target.files && event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event) => { // called once readAsDataURL is completed
+        this.url = event.target.result;
+      }
+
+      console.log(this.url)
+    }
+}
 
 }
