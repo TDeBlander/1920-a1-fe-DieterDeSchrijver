@@ -1,15 +1,15 @@
-# [BeireCooleBites](http://dieterdeschrijver.be/) (WEBIV PROJECT 2020)
+# [BeireCooleBites](http://dieterdeschrijver.be/) (WEBIV PROJECT 2020) - FRONTEND
 
 BeireCooleBites is a web application designed for people who want to register online for the BeireCooleBites week. It is an initiative by Beire Cool where they sell lunch to the benefit of 'De Warmste Week'.
 
 Not only this but the application includes a fully functional managing platform for all the days and menus.
 
-![demo gif](https://github.com/Web-IV/1920-a1-fe-DieterDeSchrijver/tree/master/src/assets/17115d2357352867688884ea87ef7830.mp4)
+<img src="src/assets/ezgif-4-0a5800767ae7.gif" alt="demo gif" />
 
 ## Getting Started
 
 ### Beforehand
-* Run the backend side of the web application
+* Run the [backend](https://github.com/Web-IV/1920-a1-be-DieterDeSchrijver) side of the web application
 
 ### Prerequisites
 
@@ -32,7 +32,7 @@ npm start
 ```
 * Open [http://localhost:4200/](http://localhost:4200/) to view the page in your browser.
 
-## Authors
+## Author
 
 This project was started by [Dieter De Schrijver](https://github.com/DieterDeSchrijver)
 
