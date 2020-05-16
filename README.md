@@ -9,7 +9,7 @@ Not only this but the application includes a fully functional managing platform 
 ## Getting Started
 
 ### Beforehand
-* Run the backend side of the web application
+* Run the [backend](https://github.com/Web-IV/1920-a1-be-DieterDeSchrijver) side of the web application
 
 ### Prerequisites
 
