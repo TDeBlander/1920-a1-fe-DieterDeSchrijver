@@ -3,16 +3,19 @@
     <div class="header item" [routerLink]="['']">
     Beire Coole Bites
   </div>
-  <a class="item" [routerLinkActive]="['active']" [routerLink]="['day/list']">
+  <a class="item" *ngIf="isAdmin" [routerLinkActive]="['active']" [routerLink]="['day/list']">
     Dagen
   </a>
-  <a class="item" [routerLinkActive]="['active']" [routerLink]="['menu/list']">
+  <a class="item" *ngIf="isAdmin" [routerLinkActive]="['active']" [routerLink]="['menu/list']">
     Menu's
   </a>
 
   <div class="right menu">
-    <a class="ui item">
+    <a *ngIf="!isAdmin" class="ui item" [routerLinkActive]="['active']" [routerLink]="['auth/login']">
       Login
+    </a>
+    <a *ngIf="isAdmin" class="ui item"  [routerLink]="['']" (click)="logout()">
+      Logout
     </a>
   </div>
   </div>

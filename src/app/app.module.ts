@@ -19,18 +19,24 @@ import { DayResolver } from './Day/DayResolver';
 import { AddDayComponent } from './Day/add-day/add-day.component';
 import { HomeComponent } from './Home/home/home.component';
 import { RegisterDayComponent } from './Day/register-day/register-day.component';
+import { AdminModule } from './admin/admin.module';
+import { LoginComponent } from './admin/login/login.component';
+import { httpInterceptorProviders } from './http-interceptors';
+import { AuthGuard } from './admin/auth.guard';
 
 const appRoutes: Routes = [
-  {path: 'menu/list', component: MenuListComponent, },
-  {path: 'day/add', component: AddDayComponent},
-  {path: 'menu/edit', component: EditMenuComponent},
-  {path: 'day/list', component: DayListComponent},
-  {path: 'day/detail/:id', component: DayDetailComponent,
+  {path: 'menu/list',canActivate: [ AuthGuard ], component: MenuListComponent, },
+  {path: 'day/add',canActivate: [ AuthGuard ], component: AddDayComponent},
+  {path: 'menu/edit',canActivate: [ AuthGuard ], component: EditMenuComponent},
+  {path: 'day/list',canActivate: [ AuthGuard ], component: DayListComponent},
+  { path: 'auth/login', component: LoginComponent},
+  {path: 'day/detail/:id',canActivate: [ AuthGuard ], component: DayDetailComponent,
     resolve: {day: DayResolver}},
-  { path: 'menu/edit/:id', component: EditMenuComponent,
+  { path: 'menu/edit/:id',canActivate: [ AuthGuard ], component: EditMenuComponent,
     resolve: { menu: MenuResolver}},
     {path: '', component: HomeComponent},
-  { path: '**', component: PageNotFoundComponent}
+  { path: '**', component: PageNotFoundComponent},
+  
 ];
 
 
@@ -54,9 +60,10 @@ const appRoutes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AdminModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

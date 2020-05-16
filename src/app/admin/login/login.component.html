@@ -1,0 +1,28 @@
+<div class="ui container">
+  <h2 class="ui center aligned header">
+    Login
+  </h2>
+  <form [formGroup]="admin" (ngSubmit)='onSubmit()' class="ui form">
+    <div class="field">
+      <label>Email</label>
+      <input name="email" placeholder="Email" type="email" formControlName="email" />
+    </div>
+
+    <div class="field">
+      <label>Password</label>
+      <input name="password" placeholder="Password" type="password" formControlName="password" />
+    </div>
+
+
+
+    <button class="ui button" type="submit" [disabled]="!admin.valid">Submit</button>
+  </form>
+
+  <div class="ui negative message" *ngIf="errorMessage">
+    <div class="header">
+      {{errorMessage}}
+    </div>
+    
+  </div>
+
+</div>

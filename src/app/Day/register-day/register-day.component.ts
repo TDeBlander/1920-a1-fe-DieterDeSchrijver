@@ -1,8 +1,30 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
-import { DayDataService } from '../day-data.service';
-import { Register } from '../register-model';
-import { Router } from '@angular/router';
+import {
+  Component,
+  OnInit,
+  Input
+} from '@angular/core';
+import {
+  FormGroup,
+  FormControl,
+  RequiredValidator,
+  FormBuilder,
+  Validators
+} from '@angular/forms';
+import {
+  DayDataService
+} from '../day-data.service';
+import {
+  Register
+} from '../register-model';
+import {
+  Router
+} from '@angular/router';
+import {
+  tap
+} from 'rxjs/operators';
+import {
+  HttpErrorResponse
+} from '@angular/common/http';
 
 @Component({
   selector: 'app-register-day',
@@ -12,33 +34,40 @@ import { Router } from '@angular/router';
 export class RegisterDayComponent implements OnInit {
   public registerForm: FormGroup;
   private url: any;
+  public errorMessage = '';
+  public succesMessage = '';
 
-  constructor(private dayDataService: DayDataService, private router: Router) { }
+  constructor(private dayDataService: DayDataService, private router: Router, private fb: FormBuilder, ) {}
 
   ngOnInit(): void {
-    this.registerForm = new FormGroup({
-      firstName: new FormControl(),
-      lastName: new FormControl(),
-      email: new FormControl()
+
+    this.registerForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', Validators.required],
     })
   }
 
-  onSubmit(){
-     let r = new Register(this.registerForm.value.firstName, this.registerForm.value.lastName, this.registerForm.value.email)
-     this.dayDataService.registerDay(r).subscribe();
-     this.registerForm.reset();
+  onSubmit() {
+    let r = new Register(this.registerForm.value.firstName, this.registerForm.value.lastName, this.registerForm.value.email)
+    this.dayDataService.registerDay(r).subscribe(
+      (val) => {
+        this.errorMessage = '';
+        this.succesMessage = 'Succesfully registered!'
+      },
+      (err: HttpErrorResponse) => {
+        console.log(err);
+        if (err.error instanceof Error) {
+          this.errorMessage = `fail`;
+        } else {
+          this.succesMessage = ''
+          this.errorMessage = err.error;
+        }
+      }
+    );
+    this.registerForm.reset();
   }
 
-  onSelectFile(event) { // called each time file input changes
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
-
-      reader.onload = (event) => { // called once readAsDataURL is completed
-        this.url = event.target.result;
-      }
-    }
-}
 
 }

@@ -13,7 +13,7 @@ export class Register{
             firstName: this._firstName,
             lastName: this._lastName,
             email: this._email,
-            dayIds: this._dayIds
+            dayIds: this._dayIds,
         }
     }
 

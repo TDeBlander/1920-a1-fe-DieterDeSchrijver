@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../admin/authentication.service';
 
 @Component({
   selector: 'app-main-nav',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthenticationService) { }
 
   ngOnInit(): void {
+  }
+
+  get isAdmin() : boolean{
+    return this.auth.admin$.value != null;
+  }
+
+  logout(){
+    this.auth.logout();
   }
 
 }
