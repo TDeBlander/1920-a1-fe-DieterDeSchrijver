@@ -4,7 +4,7 @@ BeireCooleBites is a web application designed for people who want to register on
 
 Not only this but the application includes a fully functional managing platform for all the days and menus.
 
-![demo gif](https://github.com/oSoc19/configuroute/blob/master/demo.gif)
+![demo gif](https://gyazo.com/17115d2357352867688884ea87ef7830)
 
 ## Getting Started
 
