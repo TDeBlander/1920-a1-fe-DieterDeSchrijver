@@ -72,8 +72,12 @@ export class DayDataService {
   }
 
   registerDay(r: Register): Observable<any>{
+
     r.dayIds = this._selectedDays;
-    return this.http.post(`${environment.apiUrl}/register`, r.toJSON(), { responseType: 'text' })
+    if (this._selectedDays.length != 0) {
+      return this.http.post(`${environment.apiUrl}/register`, r.toJSON(), { responseType: 'text' })
+    }
+    
   }
 
   handleError(err: any): Observable < never > {

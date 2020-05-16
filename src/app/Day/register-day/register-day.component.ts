@@ -50,24 +50,26 @@ export class RegisterDayComponent implements OnInit {
 
   onSubmit() {
     let r = new Register(this.registerForm.value.firstName, this.registerForm.value.lastName, this.registerForm.value.email)
-    this.dayDataService.registerDay(r).subscribe(
-      (val) => {
-        this.errorMessage = '';
-        this.succesMessage = 'Succesfully registered!'
-      },
-      (err: HttpErrorResponse) => {
-        console.log(err);
-        if (err.error instanceof Error) {
-          this.errorMessage = `fail`;
-        } else {
-          this.succesMessage = ''
-          this.errorMessage = err.error;
+    if (this.dayDataService.registerDay(r) == undefined) {
+      this.succesMessage = '';
+      this.errorMessage = 'Please select 1 or more days';
+    }else{
+      this.dayDataService.registerDay(r).subscribe(
+        (val) => {
+            this.errorMessage = '';
+          this.succesMessage = 'Succesfully registered!'
+        },
+        (err: HttpErrorResponse) => {
+          console.log(err);
+          if (err.error instanceof Error) {
+            this.errorMessage = `fail`;
+          } else {
+            this.succesMessage = ''
+            this.errorMessage = err.error;
+          }
         }
-      }
-    );
-    this.registerForm.reset();
+      );
+      this.registerForm.reset();
+    }
   }
-
-
-
 }
