@@ -1,27 +1,42 @@
-# WEBIV
+# [BeireCooleBites](http://dieterdeschrijver.be/) (WEBIV PROJECT 2020)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+BeireCooleBites is a web application designed for people who want to register online for the BeireCooleBites week. It is an initiative by Beire Cool where they sell lunch to the benefit of 'De Warmste Week'.
 
-## Development server
+Not only this but the application includes a fully functional managing platform for all the days and menus.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![demo gif](https://gyazo.com/17115d2357352867688884ea87ef7830)
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Beforehand
+* Run the backend side of the web application
 
-## Build
+### Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* You should have [npm](https://www.npmjs.com/get-npm) installed on your machine. 
 
-## Running unit tests
+### Installing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Clone the repository:
+```
+git clone https://github.com/Web-IV/1920-a1-fe-DieterDeSchrijver.git
+```
 
-## Running end-to-end tests
+* Install dependancies:
+```
+npm install
+```
+* Run the app in:
+```
+npm start
+```
+* Open [http://localhost:4200/](http://localhost:4200/) to view the page in your browser.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Authors
 
-## Further help
+This project was started by [Dieter De Schrijver](https://github.com/DieterDeSchrijver)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Built with
+
+* [Angular](https://github.com/angular) - The web framework used
+* [Semantic-ui](https://react.semantic-ui.com/) - Styling framework
