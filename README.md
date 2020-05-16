@@ -1,4 +1,4 @@
-# [BeireCooleBites](http://dieterdeschrijver.be/) (WEBIV PROJECT 2020)
+# [BeireCooleBites](http://dieterdeschrijver.be/) (WEBIV PROJECT 2020) - FRONTEND
 
 BeireCooleBites is a web application designed for people who want to register online for the BeireCooleBites week. It is an initiative by Beire Cool where they sell lunch to the benefit of 'De Warmste Week'.
 
