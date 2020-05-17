@@ -4,6 +4,8 @@ BeireCooleBites is a web application designed for people who want to register on
 
 Not only this but the application includes a fully functional managing platform for all the days and menus.
 
+The frontend is hosted on Netlify: https://elastic-ride-83dce2.netlify.app/ [![Netlify Status](https://api.netlify.com/api/v1/badges/e29e2c16-f936-407e-bde8-17104efe8304/deploy-status)](https://app.netlify.com/sites/elastic-ride-83dce2/deploys)
+
 <img src="src/assets/ezgif-4-0a5800767ae7.gif" alt="demo gif" />
 
 ## Getting Started
