@@ -1,8 +1,10 @@
-# [BeireCooleBites](http://dieterdeschrijver.be/) (WEBIV PROJECT 2020) - FRONTEND
+# [BeireCooleBites](https://elastic-ride-83dce2.netlify.app/) (WEBIV PROJECT 2020) - FRONTEND
 
 BeireCooleBites is a web application designed for people who want to register online for the BeireCooleBites week. It is an initiative by Beire Cool where they sell lunch to the benefit of 'De Warmste Week'.
 
 Not only this but the application includes a fully functional managing platform for all the days and menus.
+
+The frontend is hosted on Netlify: https://elastic-ride-83dce2.netlify.app/ [![Netlify Status](https://api.netlify.com/api/v1/badges/e29e2c16-f936-407e-bde8-17104efe8304/deploy-status)](https://app.netlify.com/sites/elastic-ride-83dce2/deploys)
 
 <img src="src/assets/ezgif-4-0a5800767ae7.gif" alt="demo gif" />
 
@@ -31,6 +33,14 @@ npm install
 npm start
 ```
 * Open [http://localhost:4200/](http://localhost:4200/) to view the page in your browser.
+
+* The login credentials to test are:
+```
+jvo1@telenet.be
+```
+```
+Test123!
+```
 
 ## Author
 
