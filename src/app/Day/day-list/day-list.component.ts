@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { DayDataService } from '../day-data.service';
 import { Day } from '../day-model';
 import { Observable, EMPTY } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { map, tap, filter, catchError, mergeMap } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-day-list',
@@ -18,6 +19,9 @@ export class DayListComponent implements OnInit {
 
   ngOnInit(): void {
     this._fetchDays$ = this.dayDataService.days$.pipe(
+      tap(console.log),
+      map((list: any[]): Day[] => list.sort(this.sortByDate)),
+      tap(console.log),
       catchError((err) => {
         this.errorMessage = err;
         return EMPTY;
@@ -25,6 +29,14 @@ export class DayListComponent implements OnInit {
     );
 
     console.log(this.onHome)
+  }
+
+  sortByDate(a, b){
+    if (a.date < b.date)
+    return -1;
+  if (a.date > b.date)
+    return 1;
+  return 0;
   }
 
   get days$(){

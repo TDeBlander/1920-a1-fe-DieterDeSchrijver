@@ -4,7 +4,8 @@
 
 export const environment = {
   //apiUrl: "/api",
-  apiUrl: "https://webivbackend20200517011230.azurewebsites.net/api"
+  apiUrl: "https://webivbackend20200517011230.azurewebsites.net/api",
+  production: false
 };
 
 /*

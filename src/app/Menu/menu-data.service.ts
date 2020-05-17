@@ -51,7 +51,6 @@ export class MenuDataService {
 
   get menus$(): Observable < Menu[] > {
     return this.http.get(`${environment.apiUrl}/Menu`).pipe(
-      tap(console.log),
       map((list: any[]): Menu[] => list.map(Menu.fromJSON))
     );
   }
@@ -66,7 +65,6 @@ export class MenuDataService {
 
   get allergies$(): Observable < Allergy[] > {
     return this.http.get(`${environment.apiUrl}/allergies`).pipe(
-      tap(console.log),
       map((list: any[]): Allergy[] => list.map(Allergy.fromJSON))
     )
   }
@@ -95,7 +93,6 @@ export class MenuDataService {
           return throwError(err);
         }),
         tap((menu: Menu) => {
-          console.log(menu)
           this._menus = this._menus.filter((men) => men.id != menu.id);
           this._menus = [...this._menus, menu];
           this._menus$.next(this._menus);

@@ -28,7 +28,6 @@ export class DayDataService {
 
   get days$(): Observable < Day[] > {
     return this.http.get(`${environment.apiUrl}/Day`).pipe(
-      tap(console.log),
       map((list: any[]): Day[] => list.map(Day.fromJSON))
     );
   }
