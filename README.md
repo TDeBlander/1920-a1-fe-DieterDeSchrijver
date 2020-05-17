@@ -34,6 +34,14 @@ npm start
 ```
 * Open [http://localhost:4200/](http://localhost:4200/) to view the page in your browser.
 
+* The login credentials to test are:
+```
+jvo1@telenet.be
+```
+```
+Test123!
+```
+
 ## Author
 
 This project was started by [Dieter De Schrijver](https://github.com/DieterDeSchrijver)
