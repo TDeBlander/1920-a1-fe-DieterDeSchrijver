@@ -13,7 +13,7 @@ The frontend is hosted on Netlify: https://elastic-ride-83dce2.netlify.app/ [![N
 ### Beforehand
 #### For development use the backend local:
 * Run the [backend](https://github.com/Web-IV/1920-a1-be-DieterDeSchrijver) side of the web application
-###### Default uses the online backend!
+###### Default the online backend is used!
 ### Prerequisites
 
 * You should have [npm](https://www.npmjs.com/get-npm) installed on your machine. 
